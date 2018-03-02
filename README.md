@@ -130,14 +130,19 @@ cut -d: -f1 /etc/passwd
 # delete a user
 userdel user_name
 
-# make a user with restricted access
+# --- make a user with restricted access ---
 ln -s /bin/bash /bin/rbash
+
 useradd -d /home/user_name -s /bin/rbash -m user_name
-chown root. /home/user_name/.bash_profile
-chmod 755 /home/user_name/.bash_profile
+passwd user_name
+
+mkdir /home/user_name/bin
+
+chown root. /home/user_name/.profile
+chmod 755 /home/user_name/.profile
 
 ## set PATH
-nano /home/user_name/.bash_profile
+nano /home/user_name/.profile
 
 --- .bash_profile ---
 PATH=$HOME/bin
@@ -148,6 +153,7 @@ ln -s /bin/ls /home/user_name/bin/ls
 ln -s /bin/mkdir /home/user_name/bin/mkdir
 ln -s /bin/ping /home/user_name/bin/ping
 
+--- end of: make a user with restricted access ... ---
 
 # Users of processes
 ps aux
