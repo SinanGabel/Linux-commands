@@ -127,6 +127,28 @@ ulimit -a
 # List all users
 cut -d: -f1 /etc/passwd
 
+# delete a user
+userdel user_name
+
+# make a user with restricted access
+ln -s /bin/bash /bin/rbash
+useradd -d /home/user_name -s /bin/rbash -m user_name
+chown root. /home/user_name/.bash_profile
+chmod 755 /home/user_name/.bash_profile
+
+## set PATH
+nano /home/user_name/.bash_profile
+
+--- .bash_profile ---
+PATH=$HOME/bin
+---
+
+## allow above user: "ls", "mkdir", "ping" commands
+ln -s /bin/ls /home/user_name/bin/ls
+ln -s /bin/mkdir /home/user_name/bin/mkdir
+ln -s /bin/ping /home/user_name/bin/ping
+
+
 # Users of processes
 ps aux
 
