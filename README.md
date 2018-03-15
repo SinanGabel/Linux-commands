@@ -22,7 +22,7 @@ $ crontab -e
 
 # Some Linux commands
 
-* They have been used on Linux Ubuntu, various versions.
+* They have been used on Linux Debian or Ubuntu, various versions.
 
 * WARNING: be careful with some of the commands, best read about them elsewhere first!
 
@@ -175,6 +175,9 @@ find . -name "*.pdf" -delete
 # Rename all files with ending .txt to .csv
 # [optionally] To find placement of perl command rename: $ which rename => /usr/bin/rename
 rename 's/txt/csv/' *.txt
+
+# Add text in more.txt to the end of a text file orig.txt
+cat more.txt >> orig.txt
 
 # Find and replace
 # http://unix.stackexchange.com/questions/112023/how-can-i-replace-a-string-in-a-files 
