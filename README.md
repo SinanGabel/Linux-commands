@@ -108,6 +108,10 @@ ls -1 | wc -l
         file -i "$xx"
     done
 
+# bash script function: difference between return and exit
+# return -> returns a value from a function
+# exit -> abandons the current shell
+
 # Compress files and folders in directory to named file backup.tgz’
 tar -cvzf backup.tgz *
 
