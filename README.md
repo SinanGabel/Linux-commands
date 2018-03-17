@@ -29,8 +29,8 @@ $ crontab -e
 ```
 
 # use > to write to a file and use >> to append to a file
-echo "srcfile.txt" >  "dstfile.txt"
-echo "srcfile.txt" >> "dstfile.txt"
+echo "some text" >  file.txt
+echo "some text" >> file.txt
 
 # Ubuntu apt-get command
 # see also: https://help.ubuntu.com/community/AptGet/Howto 
