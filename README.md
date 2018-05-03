@@ -24,6 +24,8 @@ $ crontab -e
 
 * They have been used on Linux Debian or Ubuntu, various versions.
 
+* Some require root access, simply use sudo per command or 'sudo -i' once and then commands
+
 * WARNING: be careful with some of the commands, best read about them elsewhere first!
 
 ```
@@ -40,6 +42,9 @@ dpkg -L couchdb
 
 # Check package version installed
 dpkg -s openssl
+
+# List (current) upgradable packages
+apt list --upgradable
 
 # Upgrade a specific package
 apt-get install openssl
