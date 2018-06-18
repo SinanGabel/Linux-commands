@@ -264,6 +264,8 @@ echo ${YY:2:2}  => “16”
 
 echo ${YY:0:4}"-"${YY:4:2}"-"${YY:6:2}  => “2016-02-01”
 
+# The below also works on complete .csv and other text files i.e. simply pipe the full .csv file in "one go"
+
 echo "YYYYMMDD" | sed -n -e "s_\(....\)\(..\)\(..\)_\2/\3/\1_p" => "MM/DD/YYYY"
 
 echo "YYYYMMDD" | sed -n -e "s_\(....\)\(..\)\(..\)_\1-\2-\3_p" => YYYY-MM-DD
