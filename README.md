@@ -16,7 +16,7 @@ $ crontab -e
 # A solution is e.g. to place a PATH within each shell script e.g.
 
     #!/bin/bash
-    PATH=/bin:/usr/bin:/usr/local/bin/
+    PATH=/bin:/usr/bin:/usr/local/bin/:$PATH
 
 ```
 
@@ -33,6 +33,13 @@ $ crontab -e
 # use > to write to a file and use >> to append to a file
 echo "some text" >  file.txt
 echo "some text" >> file.txt
+
+# Add text to beginning and/or end of text file_old and output as file_new
+(echo 'some text at beginning' ; cat file_old ; echo 'some text at end') > file_new
+
+# compare text files line by line => use commands comm or diff depending on usage, see documentation
+man comm
+man diff
 
 # Ubuntu apt-get command
 # see also: https://help.ubuntu.com/community/AptGet/Howto 
