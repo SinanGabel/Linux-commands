@@ -144,7 +144,10 @@ service --status-all
 # hard limits mark the maximum value which cannot be exceeded by setting a soft limit
 ulimit -a
 
-# List all users
+# Tell who current user is: print userid
+whoami
+
+# List all users 
 cut -d: -f1 /etc/passwd
 
 # delete a user
@@ -177,6 +180,9 @@ ln -s /bin/ping /home/user_name/bin/ping
 
 # Users of processes
 ps aux
+
+# local a command e.g. nodejs
+which nodejs
 
 # Find folder named “radar”
 find / -name "radar"
