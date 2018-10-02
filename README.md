@@ -62,6 +62,9 @@ lsb_release -a
 # Upgrade to new Linux release:
 do-release-upgrade
 
+# Need to reboot?
+if [ -f /var/run/reboot-required ]; then echo 'Restart required'; fi
+
 # Check which services start at boot time
 systemctl list-units --type service
 
