@@ -20,6 +20,23 @@ $ crontab -e
 
 ```
 
+## debug nodejs with chrome browser
+
+* Open Chrome browser and devtools
+
+```
+# 1. Open Chrome browser and type in URL: chrome://inspect/#devices
+
+# 2. Click on link: "Open dedicated DevTools for Node"
+
+# 3. In terminal type
+node --inspect-brk index.js
+
+```
+
+* That is it, you are now in Chrome developer mode, and your index.js file is open for debugging etc.
+
+
 # Some Linux commands
 
 * They have been used on Linux Debian or Ubuntu, various versions.
