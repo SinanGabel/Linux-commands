@@ -275,6 +275,9 @@ sudo dpkg-reconfigure --frontend noninteractive tzdata
 # is UTC time in seconds since 1970
 date +%s
 
+# Full date YYYY-MM-DD
+date +%F
+
 # Download file(s)
 # http://www.thegeekstuff.com/2012/07/wget-curl/
 # Upload file index.html to ftp server
