@@ -238,6 +238,9 @@ echo ‘oldstring’ | sed ...
 grep -rn --color 'echo' *.php
 grep -rnw '/path/to/somewhere/' -e "pattern"
 
+# get the difference between two files e.g. two .csv files, remove the "+" signs and the first line, output to diff.csv
+diff -u old.csv new.csv | grep -e "^\+" | sed -e 's/^\+//' | sed -e'' 1d > diff.csv
+
 # Copy directory but exclude a directory within
 rsync -av --progress sourcefolder /destinationfolder --exclude thefoldertoexclude    
 
