@@ -36,6 +36,31 @@ node --inspect-brk index.js
 
 * That is it, you are now in Chrome developer mode, and your index.js file is open for debugging etc.
 
+## large files line-by-line in nodejs
+
+```
+"use strict";
+
+// https://nodejs.org/api/fs.html#fs_fs_createwritestream_path_options
+
+const fs = require('fs');
+const readline = require('readline');
+
+const rl = readline.createInterface({
+  input: fs.createReadStream('path/big-file-in.csv', {encoding: "utf8"}),
+  output: fs.createWriteStream('path/big-file-out.csv'),                                  
+  crlfDelay: Infinity
+});
+
+rl.on('line', (line) => {
+  
+    // process line prior to writing it out
+    
+    rl.output.write(line + "\n");
+    
+    // console.log(`Line from file: ${line}`);
+});
+```
 
 # Some Linux commands
 
@@ -240,6 +265,9 @@ grep -rnw '/path/to/somewhere/' -e "pattern"
 
 # get the difference between two files e.g. two .csv files, remove the "+" signs and the first line, output to diff.csv
 diff -u old.csv new.csv | grep -e "^\+" | sed -e 's/^\+//' | sed -e'' 1d > diff.csv
+
+# delete first line in file
+sed -i'' 1d file
 
 # Copy directory but exclude a directory within
 rsync -av --progress sourcefolder /destinationfolder --exclude thefoldertoexclude    
