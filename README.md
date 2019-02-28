@@ -62,6 +62,15 @@ rl.on('line', (line) => {
 });
 ```
 
+## sqlite3
+
+# division
+
+select 1/10  = 0
+select 1/10. = 0.1
+select 1./10 = 0.1
+
+
 # Some Linux commands
 
 * They have been used on Linux Debian or Ubuntu, various versions.
