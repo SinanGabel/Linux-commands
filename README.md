@@ -266,8 +266,11 @@ grep -rnw '/path/to/somewhere/' -e "pattern"
 # get the difference between two files e.g. two .csv files, remove the "+" signs and the first line, output to diff.csv
 diff -u old.csv new.csv | grep -e "^\+" | sed -e 's/^\+//' | sed -e'' 1d > diff.csv
 
-# delete first line in file
+# delete first line in text file
 sed -i'' 1d file
+
+# insert line first in text file
+sed -i -e 1i"some text for first line in file" file
 
 # Copy directory but exclude a directory within
 rsync -av --progress sourcefolder /destinationfolder --exclude thefoldertoexclude    
