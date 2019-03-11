@@ -356,3 +356,34 @@ echo "YYYYMMDD,HHMMSS" | sed -n -e "s_\(....\)\(..\)\(..\)\(.\)\(..\)\(..\)\(..\
 echo "20160201,235432" | sed -n -e "s_\(....\)\(..\)\(..\)\(.\)\(..\)\(..\)\(..\)_\1-\2-\3 \5:\6:\7_p" => 2016-02-01 23:54:32
 
 ```
+
+## Move repo to github.com
+
+```
+
+# git push all changes on local drive
+
+# create a new private repository on Github.com. It’s important to keep the repository empty, e.g. don’t check option Initialize this repository with a README when creating the repository.
+
+# go to root of existing repo
+git remote add upstream https://github.com/[USER]/[PROJECT].git
+git push upstream master
+git push --tags upstream
+
+git remote rm origin
+git remote add origin https://github.com/[USER]/[PROJECT].git
+
+
+git config master.remote origin
+git config master.merge refs/heads/master
+
+# now check contents of path_to_repo/.git/config
+less config
+
+git push origin master
+
+# delete old repo (not on local desktop machine but at other service provider e.g. bitbucket if the old repo is there)
+
+```
+
+
