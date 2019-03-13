@@ -357,6 +357,20 @@ echo "20160201,235432" | sed -n -e "s_\(....\)\(..\)\(..\)\(.\)\(..\)\(..\)\(..\
 
 ```
 
+## some git commands
+
+```
+# roll back Y number of commits
+
+git reset --soft HEAD~Y
+
+# then one can e.g. do 
+
+git push origin master
+
+```
+
+
 ## Move repo to github.com
 
 ```
