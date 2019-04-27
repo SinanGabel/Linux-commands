@@ -107,8 +107,10 @@ apt list --upgradable
 # Upgrade a specific package
 apt-get install openssl
 
-# Check Linux version:
+# Check Linux or Linux kernel version:
 lsb_release -a
+cat /proc/version
+uname -a
 
 # Upgrade to new Linux release:
 do-release-upgrade
