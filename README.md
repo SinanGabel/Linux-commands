@@ -192,6 +192,9 @@ nslookup riskbutler.com
 # Memory check
 cat /proc/meminfo 
 
+# A simple CPU speed test - calculation of Pi with (eg.) 1000 decimals
+time echo "scale=1000; 4*a(1)" | bc -l &
+
 # Services
 service --status-all 
 
