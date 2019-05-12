@@ -264,6 +264,10 @@ rename 's/txt/csv/' *.txt
 # Add text in more.txt to the end of a text file orig.txt
 cat more.txt >> orig.txt
 
+# convert test.json file to test.csv 
+cat test.json | jq -r '(map(keys) | add | unique) as $cols | map(. as $row | $cols | map($row[.])) as $rows | $cols, $rows[] | @csv' > test.csv
+
+
 # Find and replace
 # http://unix.stackexchange.com/questions/112023/how-can-i-replace-a-string-in-a-files 
 # http://www.brunolinux.com/02-The_Terminal/Find_and%20Replace_with_Sed.html 
