@@ -17,6 +17,9 @@ $ crontab -e
 
     #!/bin/bash
     PATH=/bin:/usr/bin:/usr/local/bin/:$PATH
+    
+# Use whereis to find your required command path 
+# $ whereis [command]    
 
 ```
 
