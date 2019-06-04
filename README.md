@@ -16,7 +16,7 @@ $ crontab -e
 # A solution is e.g. to place a PATH within each shell script e.g.
 
     #!/bin/bash
-    PATH=/bin:/usr/bin:/usr/local/bin/:$PATH
+    PATH=/bin:/usr/bin:/usr/local/bin:/snap/bin:$PATH
     
 # Use whereis to find your required command path 
 # $ whereis [command]    
