@@ -114,6 +114,7 @@ apt-get install openssl
 lsb_release -a
 cat /proc/version
 uname -a
+cat /etc/os-release
 
 # Upgrade to new Linux release:
 do-release-upgrade
