@@ -1,6 +1,6 @@
-# Linux tips
+# Linux & nodejs tips
 
-## cron
+## linux: cron
 
 * A common error is not to set PATH correctly because cron runs at default with a very limited PATH and env.
 
@@ -23,7 +23,7 @@ $ crontab -e
 
 ```
 
-## debug nodejs with chrome browser
+## nodejs: debug nodejs with chrome browser
 
 * Open Chrome browser and devtools
 
@@ -39,7 +39,45 @@ node --inspect-brk index.js
 
 * That is it, you are now in Chrome developer mode, and your index.js file is open for debugging etc.
 
-## large files line-by-line in nodejs
+## nodejs: handle mix of callback and async functions
+
+Wrap the "traditional" callback functions in a function that returns a Promise e.g.
+
+```
+// Example
+
+const fs = require("fs");
+
+function fun1(str) {
+    
+    return new Promise(resolve => {
+        fs.writeFile("./tmp.txt", "some text", "utf8", (err) => {
+
+            if (err) throw err;
+
+            if (! err) { 
+                resolve(str); 
+                console.log("fun: ", Date.now()); 
+            }
+        });
+    });
+}
+
+async function fun2() {
+
+    let v = await fun1("calling");
+
+    console.log("fun2: ", Date.now());
+
+    return v;
+}
+
+fun2();
+
+
+```
+
+## nodejs: large files line-by-line
 
 ```
 "use strict";
@@ -67,14 +105,14 @@ rl.on('line', (line) => {
 
 ## sqlite3
 
-# division
+* Note difference between real numbers and integers.
 
 select 1/10  = 0
 select 1/10. = 0.1
 select 1./10 = 0.1
 
 
-# Some Linux commands
+# linux: some commands
 
 * They have been used on Linux Debian or Ubuntu, various versions.
 
