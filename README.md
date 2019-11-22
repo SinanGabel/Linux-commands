@@ -50,14 +50,17 @@ const fs = require("fs");
 
 function fun1(str) {
     
-    return new Promise(resolve => {
+    return new Promise((resolve, reject) => {
         fs.writeFile("./tmp.txt", "some text", "utf8", (err) => {
 
             if (err) throw err;
 
             if (! err) { 
                 resolve(str); 
-                console.log("fun: ", Date.now()); 
+                console.log("fun: ", Date.now());
+                
+            } else { 
+                reject("explain failure"); 
             }
         });
     });
