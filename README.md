@@ -53,14 +53,13 @@ function fun1(str) {
     return new Promise((resolve, reject) => {
         fs.writeFile("./tmp.txt", "some text", "utf8", (err) => {
 
-            if (err) throw err;
-
             if (! err) { 
                 resolve(str); 
-                console.log("fun: ", Date.now());
+                console.log("fun1 ok message, time: ", Date.now());
                 
             } else { 
-                reject("explain failure"); 
+                reject("explain failure");
+                console.error("fun1 error message");
             }
         });
     });
@@ -70,12 +69,12 @@ async function fun2() {
 
     let v = await fun1("calling");
 
-    console.log("fun2: ", Date.now());
+    console.log("fun2, time: ", Date.now());
 
     return v;
 }
 
-fun2();
+fun2().then((v) => {/* do something with v */}).catch((e) => {/* handle error */});
 
 
 ```
