@@ -287,6 +287,9 @@ ps aux
 # local a command e.g. nodejs
 which nodejs
 
+# Check if folder exists, if not then create folder
+[ ! -d /path_to_folder/folder ] && mkdir -p /path_to_folder/folder
+
 # Find folder named “radar”
 find / -name "radar"
 
