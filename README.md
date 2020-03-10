@@ -352,6 +352,9 @@ iconv -l
 # ... combine with curl
 curl URL | iconv -f ISO_8859-1 -t UTF-8 > YourCurlDownloadedFile.txt
 
+# curl post file
+curl -X POST -H "Content-Type: application/json" -d @FILENAME DESTINATION
+
 # Check date of ssl certificate validity
 # returns eg:
 # notBefore=Jan  8 09:57:51 2014 GMT
