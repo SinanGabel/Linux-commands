@@ -28,16 +28,21 @@ $ crontab -e
 * Open Chrome browser and devtools
 
 ```
-# 1. Open Chrome browser and type in URL: chrome://inspect/#devices
+# 1. The file to debug is index.js. In a terminal type
 
-# 2. Click on link: "Open dedicated DevTools for Node"
+cd path_to_index.js/index.js
 
-# 3. In terminal type
 node --inspect-brk index.js
+
+# 2. Open Chrome browser and type in URL: about:inspect
+
+# 3. Click on link: "Open dedicated DevTools for Node" and go to Sources tab
 
 ```
 
 * That is it, you are now in Chrome developer mode, and your index.js file is open for debugging etc.
+
+* Note: use `--inspect` above if it is an app listing on `localhost:port`, then add breakpoints in devtools:Sources afterwards. This is because the app has to start listining on port so you can send requests to the app in order to debug its code.
 
 ## nodejs: handle mix of callback and async functions
 
