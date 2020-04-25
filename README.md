@@ -51,35 +51,35 @@ Wrap the "traditional" callback functions in a function that returns a Promise e
 ```
 // Example
 
-const fs = require("fs");
+const fs = require('fs');
 
-function fun1(str) {
+const file = '/path/filename.extension';
+
+function fun1(file, str) {
     
     return new Promise((resolve, reject) => {
-        fs.writeFile("./tmp.txt", "some text", "utf8", (err) => {
+        fs.writeFile(file, str, 'utf8', (err) => {
 
             if (! err) { 
                 resolve(str); 
-                console.log("fun1 ok message, time: ", Date.now());
+                console.log('file written');
                 
             } else { 
-                reject("explain failure");
-                console.error("fun1 error message");
+                reject('error, file not written');
+                console.error('error, file not written');
             }
         });
     });
 }
 
-async function fun2() {
+async function fun2(file, str) {
 
-    let v = await fun1("calling");
-
-    console.log("fun2, time: ", Date.now());
-
+    let v = await fun1(file, str);
+    
     return v;
 }
 
-fun2().then((v) => {/* do something with v */}).catch((e) => {/* handle error */});
+fun2(file, str).then(c => console.log(c)).catch((err) => console.error(err));
 
 
 ```
@@ -291,6 +291,12 @@ ps aux
 
 # local a command e.g. nodejs
 which nodejs
+
+# list all files in folder but not folders
+ls -p | grep -v / 
+
+# concatenate the contents of all the files from above and place in file name files-contents.txt
+cat $(ls -p | grep -v /) > files-contents.txt
 
 # Check if folder exists, if not then create folder
 [ ! -d /path_to_folder/folder ] && mkdir -p /path_to_folder/folder
