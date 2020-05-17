@@ -53,9 +53,9 @@ Wrap the "traditional" callback functions in a function that returns a Promise e
 
 const fs = require('fs');
 
-const file = '/path/filename.extension';
+// write file
 
-function fun1(file, str) {
+function writeFile(file, str) {
     
     return new Promise((resolve, reject) => {
         fs.writeFile(file, str, 'utf8', (err) => {
@@ -72,14 +72,34 @@ function fun1(file, str) {
     });
 }
 
-async function fun2(file, str) {
+async function asyncWriteFile(file, str) {
 
-    let v = await fun1(file, str);
+    let v = await writeFile(file, str);
     
     return v;
 }
 
-fun2(file, str).then(c => console.log(c)).catch((err) => console.error(err));
+asyncWriteFile('/path/filename.extension', 'Some text string').then(c => console.log(c)).catch((err) => console.error(err));
+
+
+// read file
+
+function readFile(file) {
+    
+    return new Promise((resolve, reject) => {
+        
+        fs.readFile(file, 'utf8', (err, data) => {
+
+            if (! err) { 
+                resolve(data); 
+                
+            } else { 
+                reject(err);
+                console.error('Failed to write file: ' + file, err);
+            }
+        });
+    });
+}
 
 
 ```
