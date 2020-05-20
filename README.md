@@ -23,123 +23,8 @@ $ crontab -e
 
 ```
 
-## nodejs: debug nodejs with chrome browser
 
-* Open Chrome browser and devtools
-
-```
-# 1. The file to debug is index.js. In a terminal type
-
-cd path_to_index.js/index.js
-
-node --inspect-brk index.js
-
-# 2. Open Chrome browser and type in URL: about:inspect
-
-# 3. Click on link: "Open dedicated DevTools for Node" and go to Sources tab
-
-```
-
-* That is it, you are now in Chrome developer mode, and your index.js file is open for debugging etc.
-
-* Note: use `--inspect` above if it is an app listing on `localhost:port`, then add breakpoints in devtools:Sources afterwards. This is because the app has to start listining on port so you can send requests to the app in order to debug its code.
-
-## nodejs: handle mix of callback and async functions
-
-Wrap the "traditional" callback functions in a function that returns a Promise e.g.
-
-```
-// Example
-
-const fs = require('fs');
-
-// write file
-
-function writeFile(file, str) {
-    
-    return new Promise((resolve, reject) => {
-        fs.writeFile(file, str, 'utf8', (err) => {
-
-            if (! err) { 
-                resolve(str); 
-                console.log('file written');
-                
-            } else { 
-                reject('error, file not written');
-                console.error('error, file not written');
-            }
-        });
-    });
-}
-
-async function asyncWriteFile(file, str) {
-
-    let v = await writeFile(file, str);
-    
-    return v;
-}
-
-asyncWriteFile('/path/filename.extension', 'Some text string').then(c => console.log(c)).catch((err) => console.error(err));
-
-
-// read file
-
-function readFile(file) {
-    
-    return new Promise((resolve, reject) => {
-        
-        fs.readFile(file, 'utf8', (err, data) => {
-
-            if (! err) { 
-                resolve(data); 
-                
-            } else { 
-                reject(err);
-                console.error('Failed to write file: ' + file, err);
-            }
-        });
-    });
-}
-
-
-```
-
-## nodejs: large files line-by-line
-
-```
-"use strict";
-
-// https://nodejs.org/api/fs.html#fs_fs_createwritestream_path_options
-
-const fs = require('fs');
-const readline = require('readline');
-
-const rl = readline.createInterface({
-  input: fs.createReadStream('path/big-file-in.csv', {encoding: "utf8"}),
-  output: fs.createWriteStream('path/big-file-out.csv'),                                  
-  crlfDelay: Infinity
-});
-
-rl.on('line', (line) => {
-  
-    // process line prior to writing it out
-    
-    rl.output.write(line + "\n");
-    
-    // console.log(`Line from file: ${line}`);
-});
-```
-
-## sqlite3
-
-* Note difference between real numbers and integers.
-
-select 1/10  = 0
-select 1/10. = 0.1
-select 1./10 = 0.1
-
-
-# linux: some commands
+## Some commands
 
 * They have been used on Linux Debian or Ubuntu, various versions.
 
@@ -445,7 +330,114 @@ echo "YYYYMMDD,HHMMSS" | sed -n -e "s_\(....\)\(..\)\(..\)\(.\)\(..\)\(..\)\(..\
 
 echo "20160201,235432" | sed -n -e "s_\(....\)\(..\)\(..\)\(.\)\(..\)\(..\)\(..\)_\1-\2-\3 \5:\6:\7_p" => 2016-02-01 23:54:32
 
+# sleep (pause): s, m, h, d for seconds, minutes, hours, days
+sleep 1s
+
+
 ```
+
+## nodejs: debug nodejs with chrome browser
+
+* Open Chrome browser and devtools
+
+```
+# 1. The file to debug is index.js. In a terminal type
+
+cd path_to_index.js/index.js
+
+node --inspect-brk index.js
+
+# 2. Open Chrome browser and type in URL: about:inspect
+
+# 3. Click on link: "Open dedicated DevTools for Node" and go to Sources tab
+
+```
+
+* That is it, you are now in Chrome developer mode, and your index.js file is open for debugging etc.
+
+* Note: use `--inspect` above if it is an app listing on `localhost:port`, then add breakpoints in devtools:Sources afterwards. This is because the app has to start listining on port so you can send requests to the app in order to debug its code.
+
+
+## nodejs: handle mix of callback and async functions
+
+Wrap the "traditional" callback functions in a function that returns a Promise e.g.
+
+```
+// Example
+
+const fs = require('fs');
+
+// write file
+
+function writeFilePromise(file, str) {
+    return new Promise((resolve, reject) => {
+        fs.writeFile(file, str, 'utf8', (err) => {
+            if (! err) { 
+                resolve(true); 
+                console.log('file written');
+            } else { 
+                reject(err);
+                console.error(err);
+            }
+        });
+    });
+}
+
+async function writeFile(file, str) {
+    return await writeFilePromise(file, str);
+}
+
+writeFile('/path/filename.extension', 'Some text string').then(c => console.log(c)).catch((err) => console.error(err));
+
+// read file
+
+function readFilePromise(file) {
+    return new Promise((resolve, reject) => {
+        fs.readFile(file, 'utf8', (err, data) => {
+            if (! err) { 
+                resolve(data); 
+                console.log('file read');
+            } else { 
+                reject(err);
+                console.error(err);
+            }
+        });
+    });
+}
+
+```
+
+## nodejs: large files line-by-line
+
+```
+"use strict";
+
+// https://nodejs.org/api/fs.html#fs_fs_createwritestream_path_options
+
+const fs = require('fs');
+const readline = require('readline');
+
+const rl = readline.createInterface({
+  input: fs.createReadStream('path/big-file-in.csv', {encoding: "utf8"}),
+  output: fs.createWriteStream('path/big-file-out.csv'),                                  
+  crlfDelay: Infinity
+});
+
+rl.on('line', (line) => {
+    // process line prior to writing it out
+    rl.output.write(line + "\n");
+    // console.log(`Line from file: ${line}`);
+});
+```
+
+## sqlite3
+
+* Note difference between real numbers and integers.
+
+select 1/10  = 0
+select 1/10. = 0.1
+select 1./10 = 0.1
+
 
 ## some git commands
 
