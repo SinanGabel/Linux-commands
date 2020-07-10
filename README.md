@@ -486,6 +486,24 @@ do-release-upgrade -d
 
 ```
 
+For packages like nginx it might be better to retain config files as-is (after viewing the differences).
+
+For packages like couchdb one needs to re-establish the correct sources.list for the upgraded OS and make an "apt upgrade" (not a new install).
+
+sqlite3 should be auto re-installed, check this.
+
+nodejs and npm needs to be re-installed: 
+> apt install nodejs
+> apt install npm
+
+pm2 process manager needs to re-installed.
+> npm install pm2@latest -g
+
+other relevant npm nodejs packages also need to be re-installed.
+
+For SSL certificates for Ubuntu 20.04: https://certbot.eff.org/lets-encrypt/ubuntufocal-nginx
+
+
 
 ## Move repo to github.com
 
