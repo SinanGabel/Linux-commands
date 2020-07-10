@@ -456,6 +456,9 @@ git push origin master
 
 [source](https://www.cloudbooklet.com/how-to-upgrade-to-ubuntu-20-04-lts/)
 
+I said yes to use package maintainers files.
+
+There might be some packages that are fully updated: see sources.list and update accordingly.
 
 ```
 
