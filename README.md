@@ -452,6 +452,37 @@ git push origin master
 
 ```
 
+## Ubuntu OS upgrade (with apt)
+
+[source](https://www.cloudbooklet.com/how-to-upgrade-to-ubuntu-20-04-lts/)
+
+
+```
+
+sudo -i
+
+# Some packages might be marked as held back which cannot be installed, upgraded, or removed automatically. This may cause issues during the upgrade process.
+# If there are any on hold, packages, you need to unhold the packages with the following command.
+
+apt-mark showhold
+
+apt-mark unhold [package_name]
+
+apt update
+apt upgrade
+
+reboot
+
+sudo -i
+apt full-upgrade
+apt --purge autoremove
+
+apt install update-manager-core
+do-release-upgrade -d
+
+
+```
+
 
 ## Move repo to github.com
 
