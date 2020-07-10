@@ -458,7 +458,7 @@ git push origin master
 
 I said yes to use package maintainers files.
 
-There might be some packages that are fully updated: see sources.list and update accordingly.
+There might be some packages that are not fully updated: see sources.list and update accordingly.
 
 ```
 
