@@ -415,7 +415,7 @@ function readFilePromise(file) {
 // https://nodejs.org/api/fs.html#fs_fs_createwritestream_path_options
 
 const fs = require('fs');
-const readline = require('linebyline');  // renamed from readline because same name is used in nodejs 10+
+const readline = require('readline');  // nodejs 10+
 
 const rl = readline.createInterface({
   input: fs.createReadStream('path/big-file-in.csv', {encoding: "utf8"}),
