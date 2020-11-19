@@ -105,6 +105,10 @@ netstat -l
 # Internet connections
 netstat -plant
 
+# Internet connection speed test via linux terminal
+# source: https://askubuntu.com/questions/104755/how-to-check-internet-speed-via-terminal
+curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -
+
 # My terminals IP address
 wget -qO - http://ipecho.net/plain; echo
 
