@@ -109,6 +109,11 @@ netstat -plant
 # source: https://askubuntu.com/questions/104755/how-to-check-internet-speed-via-terminal
 curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -
 
+# http(s) (application) server speed test
+# source: https://httpd.apache.org/docs/2.4/programs/ab.html
+# see also: https://www.petefreitag.com/item/689.cfm => 100 yahoo.com requests with max 10 concurrent:
+ab -n 100 -c 10 http://www.yahoo.com/
+
 # My terminals IP address
 wget -qO - http://ipecho.net/plain; echo
 
