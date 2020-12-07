@@ -1,4 +1,4 @@
-# Linux & nodejs tips
+# Linux commands & more
 
 ## linux: cron
 
