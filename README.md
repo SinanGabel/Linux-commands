@@ -110,7 +110,7 @@ netstat -plant
 curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -
 
 # http(s) (application) server speed test
-# source: https://httpd.apache.org/docs/2.4/programs/ab.html
+# source: https://httpd.apache.org/docs/2.4/programs/ab.html => Ubuntu install => apt-get install apache2-utils
 # see also: https://www.petefreitag.com/item/689.cfm => 100 yahoo.com requests with max 10 concurrent:
 ab -n 100 -c 10 http://www.yahoo.com/
 
