@@ -461,6 +461,16 @@ git push origin master
 
 ```
 
+## Ubuntu OS issues
+
+```
+# restart audio (sound) service - e.g. if not working or not available
+# done with OS 20.10
+systemctl --user restart pulseaudio
+
+
+```
+
 ## Ubuntu OS upgrade (with apt)
 
 [source](https://www.cloudbooklet.com/how-to-upgrade-to-ubuntu-20-04-lts/)
