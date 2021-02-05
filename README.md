@@ -553,4 +553,6 @@ git push origin master
 
 ```
 
+## github.com tips
 
+* After enabling two factor authentication one cannot use a user & password to clone private repos: see: `https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token`
