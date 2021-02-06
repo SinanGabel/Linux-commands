@@ -464,8 +464,9 @@ git push origin master
 ## Ubuntu OS issues
 
 ```
-# restart audio (sound) service - e.g. if not working or not available
+# status or restart audio (sound) service - e.g. if not working or not available
 # done with OS 20.10
+systemctl --user status pulseaudio
 systemctl --user restart pulseaudio
 
 
