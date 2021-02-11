@@ -256,6 +256,9 @@ grep -rnw '/path/to/somewhere/' -e "pattern"
 # get the difference between two files e.g. two .csv files, remove the "+" signs and the first line, output to diff.csv
 diff -u old.csv new.csv | grep -e "^\+" | sed -e 's/^\+//' | sed -e'' 1d > diff.csv
 
+# find difference of two files each with one item per line
+grep -Fxvf file1 file2
+
 # delete first line in text file
 sed -i'' 1d file
 
@@ -447,6 +450,28 @@ select 1/10  = 0
 select 1/10. = 0.1
 select 1./10 = 0.1
 
+## google cloud storage
+
+```
+# Add/remove versioning to bucket
+gsutil versioning set (on|off) gs://[bucket]
+
+# List all files (including versions) in versioned bucket 
+gsutil ls -a gs://[bucket]
+
+# List file detailed information in versioned bucket
+gsutil ls -a -L gs://[bucket]/[file]
+
+# Copy files from (versioned) source to (versioned) destination. 
+# Note that version timestamps are not transferred to destination (new version timestamps are made). 
+# Note that repeated copying of the same bucket source data will be added (in addition) to the already available data in the destination i.e. it does not “understand” that the data is already present in the destination): 
+gsutil cp -r -A gs://[source bucket] gs://[destination bucket]
+
+# Sync source to destination. 
+# Note that versions (of versioning) are not transferred
+gsutil rsync -r -n gs://[source bucket] gs://[destination bucket]
+
+```
 
 ## some git commands
 
