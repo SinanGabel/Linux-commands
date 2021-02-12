@@ -1,5 +1,7 @@
 # Linux commands & more
 
+Code > Build > Test > Document > Save (git) > Deploy ... possibly more work or work in parallel or do work in different steps ...
+
 ## linux: cron
 
 * A common error is not to set PATH correctly because cron runs at default with a very limited PATH and env.
