@@ -71,7 +71,9 @@ cat /etc/os-release
 # Upgrade to new Linux release:
 do-release-upgrade
 
-# Need to reboot?
+# Need to reboot? First check if /var/run/reboot-required exists on vm instance
+cat /var/run/reboot-required
+# if reboot-required does exist then use this command to check if there is a reboot required
 if [ -f /var/run/reboot-required ]; then echo 'Restart required'; fi
 
 # Check which services start at boot time
