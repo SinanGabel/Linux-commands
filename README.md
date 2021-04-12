@@ -454,6 +454,10 @@ select 1/10  = 0
 select 1/10. = 0.1
 select 1./10 = 0.1
 
+### export to .CSV
+
+`echo -e ".separator ','\n.headers on\n.mode csv\n.once newfile.csv\nSELECT * from [tablename];" | sqlite3 [databasename].db`
+
 ### links
 
 * [CLI commands](https://sqlite.org/cli.html)
