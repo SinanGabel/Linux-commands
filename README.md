@@ -454,6 +454,11 @@ select 1/10  = 0
 select 1/10. = 0.1
 select 1./10 = 0.1
 
+### links
+
+* [CLI commands](https://sqlite.org/cli.html)
+* [tutorial site](https://www.sqlitetutorial.net/)
+
 ## google cloud storage
 
 ```
