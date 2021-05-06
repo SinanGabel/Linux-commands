@@ -136,6 +136,10 @@ wc -l *.csv
 # Count # of files in directory
 ls -1 | wc -l
 
+# Count number of characters in file, and words in file
+wc -m <filename>
+wc -w <filename>
+
 # bash script: Loop over files (*.csv) in current directory (.) and
 # do something with each file (file -i) e.g. list the encoding of each file
     #!/bin/bash
