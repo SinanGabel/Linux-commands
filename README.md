@@ -356,6 +356,13 @@ sleep 1s
 
 ```
 
+## code validation
+
+* .js validation: [Google Closure compiler](https://closure-compiler.appspot.com/home). This is available as java file for script compilation & validation.
+
+* .html5 validation: [W3 org validator](https://validator.w3.org/) and [other W3 tools](https://w3c.github.io/developers/tools/)
+
+
 ## nodejs: debug nodejs with chrome browser
 
 * Open Chrome browser and devtools
