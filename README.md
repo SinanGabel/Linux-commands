@@ -353,8 +353,12 @@ echo "20160201,235432" | sed -n -e "s_\(....\)\(..\)\(..\)\(.\)\(..\)\(..\)\(..\
 # sleep (pause): s, m, h, d for seconds, minutes, hours, days
 sleep 1s
 
-
 ```
+
+### Links
+
+* [Bash quoting](https://wiki.bash-hackers.org/syntax/quoting)
+
 
 ## code validation
 
