@@ -369,6 +369,8 @@ sleep 1s
 
 ## nodejs: debug nodejs with chrome browser
 
+* To install nodejs: [nodesource](https://github.com/nodesource/distributions#installation-instructions)
+
 * Open Chrome browser and devtools
 
 ```
