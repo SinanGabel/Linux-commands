@@ -490,6 +490,9 @@ gsutil versioning set (on|off) gs://[bucket]
 # List all files (including versions) in versioned bucket 
 gsutil ls -a gs://[bucket]
 
+# Count all files (including versions) in versioned bucket (subtract approx. 1-3 lines providing extra information, possibly test showing files first) 
+gsutil ls -a gs://[bucket] | wc -l
+
 # List file detailed information in versioned bucket
 gsutil ls -a -L gs://[bucket]/[file]
 
