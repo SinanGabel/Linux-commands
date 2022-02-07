@@ -180,8 +180,13 @@ whoami
 # List all users 
 cut -d: -f1 /etc/passwd
 
+# add a user
+adduser user_name
+
 # delete a user
 userdel user_name
+
+# add a user to a group, refer to: https://linuxize.com/post/how-to-add-user-to-group-in-linux/
 
 # --- make a user with restricted access ---
 ln -s /bin/bash /bin/rbash
