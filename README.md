@@ -183,7 +183,8 @@ cut -d: -f1 /etc/passwd
 # add a user
 adduser user_name
 
-# make local sudo'er
+# make local sudo'er 
+# test that it works => [a source](https://www.digitalocean.com/community/tutorials/how-to-create-a-sudo-user-on-ubuntu-quickstart)
 usermod -a -G sudo local
 
 # start an empty crontab for a user
