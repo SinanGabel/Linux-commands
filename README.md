@@ -284,6 +284,9 @@ rsync -av --progress sourcefolder /destinationfolder --exclude thefoldertoexclud
 # make a directory ("olddir") read-only in a new directory ("newdir") => thus making a read-only copy of the new dir to olddir
 mount --bind --read-only olddir newdir
 
+# remove a directory mount (see mount example above)
+umount -R newdir
+
 # Check encoding of file
 file -i YourFile.txt
 
