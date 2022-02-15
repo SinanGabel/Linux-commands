@@ -183,6 +183,13 @@ cut -d: -f1 /etc/passwd
 # add a user
 adduser user_name
 
+# make local sudo'er
+usermod -a -G sudo local
+
+# start an empty crontab for a user
+su user_name
+crontab -e
+
 # delete a user
 userdel user_name
 
