@@ -1,38 +1,10 @@
 # Linux commands & more
 
-Code > Build > Test > Document > Save (git) > Deploy ... possibly more work or work in parallel or do work in different steps ...
-
-## linux: cron
-
-* A common error is not to set PATH correctly because cron runs at default with a very limited PATH and env.
-
-```
-# first view your env in terminal
-$ env
-
-# now create a env check in cron
-$ crontab -e
-* * * * * env >> env.txt
-
-# By comparing the two above you will see a big difference in the two environments
-# A solution is e.g. to place a PATH within each shell script e.g.
-
-    #!/bin/bash
-    PATH=/bin:/usr/bin:/usr/local/bin:/snap/bin:$PATH
-    
-# Use whereis to find your required command path 
-# $ whereis [command]    
-
-```
-
-
 ## Some commands
 
 * They have been used on Linux Debian or Ubuntu, various versions.
 
-* Some require root access, simply use sudo per command or 'sudo -i' once and then commands
-
-* WARNING: be careful with some of the commands, best read about them elsewhere first!
+* Some require root access, simply use `sudo` per command or `sudo -i` once and then the commands
 
 ```
 
@@ -46,6 +18,12 @@ echo "some text" >> file.txt
 # compare text files line by line => use commands comm or diff depending on usage, see documentation
 man comm
 man diff
+
+# compare two .pdf files: first.pdf and second.pdf (as texts), first install meld (a program)
+# source: https://askubuntu.com/questions/40813/diff-of-two-pdf-files
+sudo apt-get install meld
+meld <(pdftotext -layout first.pdf /dev/stdout) <(pdftotext -layout second.pdf /dev/stdout)
+
 
 # Ubuntu apt-get command
 # see also: https://help.ubuntu.com/community/AptGet/Howto 
@@ -378,6 +356,28 @@ sleep 1s
 
 * [Bash quoting](https://wiki.bash-hackers.org/syntax/quoting)
 
+## linux: cron
+
+* A common error is not to set PATH correctly because cron runs at default with a very limited PATH and env.
+
+```
+# first view your env in terminal
+$ env
+
+# now create a env check in cron
+$ crontab -e
+* * * * * env >> env.txt
+
+# By comparing the two above you will see a big difference in the two environments
+# A solution is e.g. to place a PATH within each shell script e.g.
+
+    #!/bin/bash
+    PATH=/bin:/usr/bin:/usr/local/bin:/snap/bin:$PATH
+    
+# Use whereis to find your required command path 
+# $ whereis [command]    
+
+```
 
 ## code validation
 
