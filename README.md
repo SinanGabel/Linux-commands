@@ -46,7 +46,8 @@ cat /proc/version
 uname -a
 cat /etc/os-release
 
-# Upgrade to new Linux release:
+# Upgrade to new Linux release
+# if the internet connection is lost during upgrading, log on again, and reconnect to the upgrading information texts by doing: sudo screen -D -r
 do-release-upgrade
 
 # Need to reboot? First check if /var/run/reboot-required exists on vm instance
