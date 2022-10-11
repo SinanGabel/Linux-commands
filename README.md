@@ -58,6 +58,10 @@ if [ -f /var/run/reboot-required ]; then echo 'Restart required'; fi
 # Check which services start at boot time
 systemctl list-units --type service
 
+# Logs, latest 1000 lines in system log
+# See more at: https://www.digitalocean.com/community/tutorials/how-to-use-journalctl-to-view-and-manipulate-systemd-logs
+journalctl -n 1000
+
 # How to kill an application by name:
 sudo killall -9 scp
 
