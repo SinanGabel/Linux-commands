@@ -535,12 +535,12 @@ gsutil rsync -r -n gs://[source bucket] gs://[destination bucket]
 
 ```
 # roll back Y number of commits
-
 git reset --soft HEAD~Y
-
 # then one can e.g. do 
-
 git push origin master
+
+# git show diff of changes to be committed
+git diff --cached
 
 ```
 
