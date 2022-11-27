@@ -62,6 +62,10 @@ systemctl list-units --type service
 # See more at: https://www.digitalocean.com/community/tutorials/how-to-use-journalctl-to-view-and-manipulate-systemd-logs
 journalctl -n 1000
 
+#Specific service logs, for example, for couchdb and nginx
+journalctl -u couchdb.service
+journalctl -u nginx.service
+
 # How to kill an application by name:
 sudo killall -9 scp
 
