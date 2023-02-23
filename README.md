@@ -127,6 +127,9 @@ ls -1 | wc -l
 wc -m <filename>
 wc -w <filename>
 
+# Symbolic link to a file, here using nginx configuration as an example: this links to the file mydomain
+$ /etc/nginx/sites-enabled ln -s ../sites-available/mydomain .
+
 # bash script: Loop over files (*.csv) in current directory (.) and
 # do something with each file (file -i) e.g. list the encoding of each file
     #!/bin/bash
