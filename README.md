@@ -19,6 +19,9 @@ echo "some text" >> file.txt
 man comm
 man diff
 
+# How to add same text to each line of a text file
+# source: https://www.baeldung.com/linux/add-string-line-end
+
 # compare two .pdf files: first.pdf and second.pdf (as texts), first install meld (a program)
 # source: https://askubuntu.com/questions/40813/diff-of-two-pdf-files
 sudo apt-get install meld
