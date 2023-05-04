@@ -576,7 +576,8 @@ I have used then one "Upgrade Debian 9 to Debian 10 Buster"
 
 ## Ubuntu OS upgrade (with apt)
 
-[source](https://www.cloudbooklet.com/how-to-upgrade-to-ubuntu-20-04-lts/)
+* [releases](https://wiki.ubuntu.com/Releases)
+* [source](https://www.cloudbooklet.com/how-to-upgrade-to-ubuntu-20-04-lts/)
 
 I said yes to use package maintainers files.
 
@@ -611,6 +612,20 @@ do-release-upgrade -d
 For packages like nginx it might be better to retain config files as-is (after viewing the differences).
 
 For packages like couchdb one needs to re-establish the correct sources.list for the upgraded OS and make an "apt upgrade" (not a new install).
+
+* [couchdb](https://docs.couchdb.org/en/stable/install/unix.html#installation-using-the-apache-couchdb-convenience-binary-packages)
+
+```
+sudo apt update && sudo apt install -y curl apt-transport-https gnupg
+curl https://couchdb.apache.org/repo/keys.asc | gpg --dearmor | sudo tee /usr/share/keyrings/couchdb-archive-keyring.gpg >/dev/null 2>&1
+source /etc/os-release
+echo "deb [signed-by=/usr/share/keyrings/couchdb-archive-keyring.gpg] https://apache.jfrog.io/artifactory/couchdb-deb/ ${VERSION_CODENAME} main" \
+    | sudo tee /etc/apt/sources.list.d/couchdb.list >/dev/null
+    
+sudo apt update
+sudo apt install -y couchdb
+
+```
 
 sqlite3 should be auto re-installed, check this.
 
