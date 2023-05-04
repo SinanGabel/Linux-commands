@@ -623,7 +623,11 @@ echo "deb [signed-by=/usr/share/keyrings/couchdb-archive-keyring.gpg] https://ap
     | sudo tee /etc/apt/sources.list.d/couchdb.list >/dev/null
     
 sudo apt update
+
+# Either (if couchdb has not been installed earlier)
 sudo apt install -y couchdb
+# Or (if couchdb is already installed)
+sudo apt full-upgrade
 
 ```
 
