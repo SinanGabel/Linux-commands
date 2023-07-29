@@ -695,3 +695,44 @@ git push origin master
 ## github.com tips
 
 * After enabling two factor authentication one cannot use a user & password to clone private repos: see: `https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token`
+
+
+## apache2 webserver on (Ubuntu) desktop
+
+It can be quite tricky to get a symbolic linked directory of a user to be accessed through the localhost apache webserver (on a desktop).
+Assume the user name is "local" and the folder name is "files" i.e.
+
+`/home/local/files/` is the folder to access through the web browser on `localhost/files`.
+
+`DocumentRoot /var/www/html` - thus this is the default apache2 document root (else adjust below).
+
+One way to fix this is to:
+
+```
+sudo -i
+cd /var/www/html
+ln -s /home/local/files/ .
+
+cd /home/
+chmod 755 local
+
+cd /home/local
+chmod -R 755 files
+
+cd /etc/apache2/
+cp apache2.conf apache2.conf.orig
+nano apache2.conf
+
+# add this to the default apache2.conf
+<Directory /var/www/html/files/>
+        Options Indexes FollowSymLinks
+        AllowOverride None
+        Require all granted
+</Directory>
+
+ServerName localhost
+
+```
+
+
+
