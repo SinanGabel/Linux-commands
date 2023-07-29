@@ -49,6 +49,9 @@ cat /proc/version
 uname -a
 cat /etc/os-release
 
+```
+```
+
 # Upgrade to new Linux release
 # if the internet connection is lost during upgrading, log on again, and reconnect to the upgrading information texts by doing: sudo screen -D -r
 do-release-upgrade
@@ -98,6 +101,9 @@ netstat -l
 
 # Internet connections
 netstat -plant
+
+```
+```
 
 # Internet connection speed test via linux terminal
 # source: https://askubuntu.com/questions/104755/how-to-check-internet-speed-via-terminal
@@ -153,6 +159,9 @@ tar -xvzf backup.tgz
 # check IP addresses
 nslookup riskbutler.com
 
+```
+```
+
 # Memory check
 cat /proc/meminfo 
 
@@ -183,6 +192,9 @@ usermod -a -G sudo local
 # start an empty crontab for a user
 su user_name
 crontab -e
+
+```
+```
 
 # delete a user
 userdel user_name
@@ -253,6 +265,8 @@ cat more.txt >> orig.txt
 # convert test.json file to test.csv 
 cat test.json | jq -r '(map(keys) | add | unique) as $cols | map(. as $row | $cols | map($row[.])) as $rows | $cols, $rows[] | @csv' > test.csv
 
+```
+```
 
 # Find and replace
 # http://unix.stackexchange.com/questions/112023/how-can-i-replace-a-string-in-a-files 
@@ -310,6 +324,9 @@ curl -X POST -H "Content-Type: application/json" -d @FILENAME DESTINATION
 # Note: I personally now use Let's Encrypt and its auto cron job that fully automates updates
 # read more at: https://letsencrypt.org/
 echo | openssl s_client -connect site:port 2>/dev/null | openssl x509 -noout -dates
+
+```
+```
 
 # Start graphical environment
 startx
