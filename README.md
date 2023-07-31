@@ -558,6 +558,22 @@ gsutil rsync -r -n gs://[source bucket] gs://[destination bucket]
 
 ```
 
+### gsutil (google)
+
+If you try to install gsutil using `apt install gsutil` it may install "GrandStream manager" - or it may be preinstalled - instead of Google's gsutil. This may solve it:
+
+```
+# remove the wrong gsutil package if it has been installed
+sudo apt-get remove --purge gsutil
+
+# install google gsutil
+# source: https://cloud.google.com/sdk/docs/downloads-snap
+
+snap install google-cloud-cli --classic
+gcloud init
+
+```
+
 ## some git commands
 
 ```
