@@ -734,5 +734,44 @@ ServerName localhost
 
 ```
 
+## usefull apps
 
+```
+sudo -i
+
+# git
+apt install git
+
+git config --global user.email my_github_email
+git config --global user.name my_github_username
+
+# apache2
+apt install apache2
+
+apachectl configtest
+
+# java
+sudo apt install default-jre
+
+# google closure compiler
+# source: https://mvnrepository.com/artifact/com.google.javascript/closure-compiler
+
+# curl
+sudo apt  install curl
+
+# npm
+sudo apt install npm
+
+# nodejs
+# source: https://github.com/nodesource/distributions
+
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - &&\
+sudo apt-get install -y nodejs
+
+# gsutil
+sudo apt  install gsutil
+
+# sqlite3
+
+```
 
