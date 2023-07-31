@@ -570,10 +570,16 @@ sudo apt-get remove --purge gsutil
 # source: https://cloud.google.com/sdk/docs/downloads-snap
 
 snap install google-cloud-cli --classic
+
+# login as the user that will be using gsutil
+su [ubuntu_user]
 gcloud init
 
 # authentication
 # source: https://cloud.google.com/storage/docs/authentication#gsutilauth
+# Thus download a .json key to e.g. /tmp/
+
+gcloud auth activate-service-account --key-file /tmp/KEY_FILE
 
 ```
 
