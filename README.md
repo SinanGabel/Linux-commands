@@ -572,6 +572,9 @@ sudo apt-get remove --purge gsutil
 snap install google-cloud-cli --classic
 gcloud init
 
+# authentication
+# source: https://cloud.google.com/storage/docs/authentication#gsutilauth
+
 ```
 
 ## some git commands
