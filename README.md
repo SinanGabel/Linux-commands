@@ -598,6 +598,12 @@ git diff --cached
 
 ## Ubuntu OS issues
 
+### wayland display server and nvidia driver 510+
+
+Below in `/usr/lib/udev/rules.d/61-gdm.rules` there is a bug: make a new rule that enables Wayland if the nvidia driver is > version 510, then reboot and choose Wayland as the display system.
+
+### sound
+
 ```
 # System log: worth checking once in a while to ensure there are not errors
 less /var/log/syslog
