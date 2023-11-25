@@ -238,6 +238,10 @@ ls -p | grep -v /
 # concatenate the contents of all the files from above and place in file name files-contents.txt
 cat $(ls -p | grep -v /) > files-contents.txt
 
+# Combine a number of .json objects in folder `json_files/` into a single .json file named merged.json
+# [source](https://stackoverflow.com/questions/29636331/merging-json-files-using-a-bash-script)
+jq -s 'reduce .[] as $item ({}; . * $item)' json_files/* > merged.json
+
 # Check if folder exists, if not then create folder
 [ ! -d /path_to_folder/folder ] && mkdir -p /path_to_folder/folder
 
