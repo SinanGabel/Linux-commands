@@ -335,6 +335,9 @@ echo | openssl s_client -connect site:port 2>/dev/null | openssl x509 -noout -da
 # Start graphical environment
 startx
 
+# Discrete graphics card on desktop
+# source: https://www.linuxbabe.com/desktop-linux/switch-intel-nvidia-graphics-card-ubuntu
+
 # Install desktop on Ubuntu
 sudo apt-get install ubuntu-desktop
 
