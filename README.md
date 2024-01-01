@@ -56,9 +56,9 @@ cat /etc/os-release
 # if the internet connection is lost during upgrading, log on again, and reconnect to the upgrading information texts by doing: sudo screen -D -r
 do-release-upgrade
 
-# Need to reboot? First check if /var/run/reboot-required exists on vm instance
+# Need to reboot? Simply check if /var/run/reboot-required exists on vm instance => which means that reboot is required
 cat /var/run/reboot-required
-# if reboot-required does exist then use this command to check if there is a reboot required
+# or
 if [ -f /var/run/reboot-required ]; then echo 'Restart required'; fi
 
 # Check which services start at boot time
