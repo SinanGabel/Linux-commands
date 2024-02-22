@@ -565,7 +565,7 @@ gsutil rsync -r -n gs://[source bucket] gs://[destination bucket]
 
 ```
 
-### gsutil (google)
+### gsutil gcloud (google)
 
 If you try to install gsutil using `apt install gsutil` it may install "GrandStream manager" - or it may be preinstalled - instead of Google's gsutil. This may solve it:
 
@@ -587,6 +587,12 @@ gcloud init
 # Thus download a .json key to e.g. /tmp/
 
 gcloud auth activate-service-account --key-file /tmp/KEY_FILE
+
+# list config
+gcloud config list
+
+# change project-id
+gcloud config set project [wanted-project-id]
 
 ```
 
