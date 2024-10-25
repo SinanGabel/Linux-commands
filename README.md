@@ -568,7 +568,7 @@ gsutil cp -r -A gs://[source bucket] gs://[destination bucket]
 gsutil rsync -r -n gs://[source bucket] gs://[destination bucket]
 
 
-## bash script for combining with urls.txt above
+## bash script for combining with urls.txt above - one file at a time (not parallel)
 --- start ---
 
 #!/bin/bash
@@ -588,6 +588,20 @@ gsutil cp "$url" ./"$filename"
 done < urls.txt
 
 --- end ---
+
+## bash script for combining with urls.txt above - parallel
+--- start ---
+
+#!/bin/bash
+
+# Replace 'urls.txt' with the actual name of your file
+# Replace '4' with the desired number of parallel processes
+# (adjust based on your system resources)
+
+cat urls.txt | xargs -n 1 -P 4 sh -c 'gcloud storage cp "$1" ./files2/"$(basename "$1")"' --
+
+--- end ---
+
 
 ```
 
