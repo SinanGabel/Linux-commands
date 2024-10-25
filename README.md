@@ -546,10 +546,13 @@ select 1./10 = 0.1
 gsutil versioning set (on|off) gs://[bucket]
 
 # List all files (including versions) in versioned bucket 
-gsutil ls -a gs://[bucket]
+gcloud storage ls --all-versions gs://[bucket]
+
+# Generate a file file-list.txt with all files, one on each row
+gcloud storage ls --all-versions gs://bucket/doc.json | cat > file-list.txt
 
 # Count all files (including versions) in versioned bucket (subtract approx. 1-3 lines providing extra information, possibly test showing files first) 
-gsutil ls -a gs://[bucket] | wc -l
+gcloud storage ls --all-versions gs://[bucket] | wc -l
 
 # List file detailed information in versioned bucket
 gsutil ls -a -L gs://[bucket]/[file]
