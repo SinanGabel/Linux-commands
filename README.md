@@ -548,8 +548,9 @@ gsutil versioning set (on|off) gs://[bucket]
 # List all files (including versions) in versioned bucket 
 gcloud storage ls --all-versions gs://[bucket]
 
-# Generate a file file-list.txt with all files, one on each row
-gcloud storage ls --all-versions gs://bucket/doc.json | cat > file-list.txt
+# Generate a file urls.txt with all files, one on each row
+# Optionally use urls.txt to fetch all the files to local folder (for example): see the bash script below
+gcloud storage ls --all-versions gs://bucket/doc.json | cat > urls.txt
 
 # Count all files (including versions) in versioned bucket (subtract approx. 1-3 lines providing extra information, possibly test showing files first) 
 gcloud storage ls --all-versions gs://[bucket] | wc -l
@@ -565,6 +566,28 @@ gsutil cp -r -A gs://[source bucket] gs://[destination bucket]
 # Sync source to destination. 
 # Note that versions (of versioning) are not transferred
 gsutil rsync -r -n gs://[source bucket] gs://[destination bucket]
+
+
+## bash script for combining with urls.txt above
+--- start ---
+
+#!/bin/bash
+
+# Replace 'urls.txt' with the actual name of your file
+
+while read -r url; do
+
+# Extract the filename from the URL
+
+filename=$(basename "$url")
+
+# Copy the file to Google Cloud Storage
+
+gsutil cp "$url" ./"$filename"
+
+done < urls.txt
+
+--- end ---
 
 ```
 
