@@ -602,6 +602,8 @@ cat urls.txt | xargs -n 1 -P 4 sh -c 'gcloud storage cp "$1" ./files2/"$(basenam
 
 --- end ---
 
+# Continuing from the above bash scripts one can use the range of files downloaded from Google Storage and possibly transforming the files contents, file by file, for example:
+cat * | jq '{"meta": .meta, "shareclass": .ShareClass }'
 
 ```
 
