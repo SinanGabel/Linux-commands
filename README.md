@@ -27,6 +27,9 @@ man diff
 sudo apt-get install meld
 meld <(pdftotext -layout first.pdf /dev/stdout) <(pdftotext -layout second.pdf /dev/stdout)
 
+# Convert pdf file to single images in one go 
+# source: https://askubuntu.com/questions/50170/how-to-convert-pdf-to-image
+pdftoppm input.pdf outputname -png
 
 # Ubuntu apt-get command
 # see also: https://help.ubuntu.com/community/AptGet/Howto 
