@@ -637,7 +637,8 @@ gcloud auth activate-service-account --key-file /tmp/KEY_FILE
 gcloud config list
 
 # change project-id
-gcloud config set project [wanted-project-id]
+gcloud auth application-default set-quota-project [project-id]
+gcloud config set project [project-id]
 
 ```
 
