@@ -1,4 +1,4 @@
-# Linux commands & more
+# Bash & Linux commands
 
 ## Some commands
 
