@@ -278,9 +278,12 @@ cat test.json | jq -r '(map(keys) | add | unique) as $cols | map(. as $row | $co
 # Find and replace
 # http://unix.stackexchange.com/questions/112023/how-can-i-replace-a-string-in-a-files 
 # http://www.brunolinux.com/02-The_Terminal/Find_and%20Replace_with_Sed.html 
-cat filename | sed  's/oldstring/newstring/g'  >  newfilename  
-… >> filename
+cat filename | sed  's/oldstring/newstring/g'  >  new_filename
+cat filename | sed  's/oldstring/newstring/g'  >> current_filename
 echo ‘oldstring’ | sed ...
+
+# Even simpler: In-place using '-i' find and replace
+sed -i 's/oldstring/newstring/g' filename
 
 # Look for particular string in a group of files
 # ... this finds all cases of the string “echo” in the .php files in all folders from “.”
