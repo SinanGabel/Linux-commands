@@ -789,6 +789,8 @@ git push origin master
 
 * After enabling two factor authentication one cannot use a user & password to clone private repos: see: `https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token`
 
+## Firewall problems for URLs - possibly check here
+https://sitereview.bluecoat.com/#/
 
 ## apache2 webserver on (Ubuntu) desktop
 
