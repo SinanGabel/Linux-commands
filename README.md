@@ -433,6 +433,8 @@ $ crontab -e
 
 ## nodejs: debug nodejs with chrome browser
 
+* source: [nodejs debugger](https://nodejs.org/api/debugger.html#v8-inspector-integration-for-nodejs)
+
 * To install nodejs: [nodesource](https://github.com/nodesource/distributions#installation-instructions) and information on [nodejs releases](https://nodejs.org/en/about/releases/)
 
 * Open Chrome browser and devtools
@@ -454,6 +456,7 @@ node --inspect-brk index.js
 
 * Note: use `--inspect` above if it is an app listing on `localhost:port`, then add breakpoints in devtools:Sources afterwards. This is because the app has to start listining on port so you can send requests to the app in order to debug its code.
 
+* To test one can use: `node --inspect-brk -e "console.log(1 + 2)"`
 
 ## nodejs: handle mix of callback and async functions
 
