@@ -683,9 +683,12 @@ systemctl --user restart pulseaudio
 
 ## Debian OS update (with apt)
 
-[how to source](https://www.cyberciti.biz/faq/update-upgrade-debian-9-to-debian-10-buster/)
+[https://www.cyberciti.biz/faq/update-upgrade-debian-9-to-debian-10-buster/](https://www.cyberciti.biz/faq/update-upgrade-debian-11-to-debian-12-bookworm/)
 
-I have used then one "Upgrade Debian 9 to Debian 10 Buster"
+```
+If connection during installation is lost (for some reason) you can for example reboot and then run: 'dpkg --configure -a' to correct the installation problem after lost connection
+
+```
 
 ## Ubuntu OS upgrade (with apt)
 
