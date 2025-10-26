@@ -820,6 +820,11 @@ chmod 755 local
 cd /home/local
 chmod -R 755 files
 
+
+# To fix this message:
+# AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1.
+# Set the 'ServerName' directive globally to suppress this message
+# Do the following (for localhost-use-only):
 cd /etc/apache2/
 cp apache2.conf apache2.conf.orig
 nano apache2.conf
