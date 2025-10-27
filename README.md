@@ -876,7 +876,12 @@ sudo apt-get install -y nodejs
 # gsutil
 sudo apt  install gsutil
 
+#uuid
+sudo apt install uuid
+
 # sqlite3
+sudo apt-get install sqlite3
+
 
 ```
 
