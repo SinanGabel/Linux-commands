@@ -616,27 +616,23 @@ cat * | jq '{"meta": .meta, "shareclass": .ShareClass }'
 
 ```
 
-### gsutil gcloud (google)
-
-If you try to install gsutil using `apt install gsutil` it may install "GrandStream manager" - or it may be preinstalled - instead of Google's gsutil. This may solve it:
+### Install Google Cloud CLI 
 
 ```
-# remove the wrong gsutil package if it has been installed
-sudo apt-get remove --purge gsutil
+# source: https://cloud.google.com/sdk/docs/downloads-interactive
+curl https://sdk.cloud.google.com | bash
+# retart terminal
+exec -l $SHELL
 
-# install google gsutil
-# source: https://cloud.google.com/sdk/docs/downloads-snap
-
-snap install google-cloud-cli --classic
-
-# login as the user that will be using gsutil
+# init and authenticate (to google cloud) 
 su [ubuntu_user]
 gcloud init
 
-# authentication
+# --- Now the cli is installed, the below can be used when needed ---
+
+# optional (additional) key:file service account authentication - this is not necessary if the above was done 
 # source: https://cloud.google.com/storage/docs/authentication#gsutilauth
 # Thus download a .json key to e.g. /tmp/
-
 gcloud auth activate-service-account --key-file /tmp/KEY_FILE
 
 # list config
