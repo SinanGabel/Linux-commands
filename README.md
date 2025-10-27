@@ -669,7 +669,10 @@ Below in `/usr/lib/udev/rules.d/61-gdm.rules` there is a bug: make a new rule th
 # System log: worth checking once in a while to ensure there are not errors
 less /var/log/syslog
 
-# status or restart audio (sound) service - e.g. if not working or not available
+# Fix 1
+systemctl --user restart pipewire wireplumber
+
+# Fix 2 status or restart audio (sound) service - e.g. if not working or not available
 # done with OS 20.10
 systemctl --user status pulseaudio
 systemctl --user restart pulseaudio
