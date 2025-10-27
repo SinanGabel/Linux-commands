@@ -840,7 +840,7 @@ ServerName localhost
 
 ```
 
-## usefull apps
+## usefull software
 
 ```
 sudo -i
@@ -869,9 +869,8 @@ sudo apt  install curl
 sudo apt install npm
 
 # nodejs
-# source: https://github.com/nodesource/distributions
-
-curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - &&\
+# source: https://github.com/nodesource/distributions and https://github.com/nodesource/distributions/tree/master/scripts/deb
+curl -fsSL https://deb.nodesource.com/setup_24.x | sudo -E bash - &&\
 sudo apt-get install -y nodejs
 
 # gsutil
