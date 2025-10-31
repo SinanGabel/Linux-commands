@@ -343,6 +343,7 @@ startx
 
 # Discrete graphics card on desktop
 # source: https://www.linuxbabe.com/desktop-linux/switch-intel-nvidia-graphics-card-ubuntu
+# How To Install: https://documentation.ubuntu.com/server/how-to/graphics/install-nvidia-drivers/
 
 # Install desktop on Ubuntu
 sudo apt-get install ubuntu-desktop
