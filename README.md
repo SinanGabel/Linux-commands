@@ -269,7 +269,8 @@ rename 's/txt/csv/' *.txt
 # Add text in more.txt to the end of a text file orig.txt
 cat more.txt >> orig.txt
 
-# convert test.json file to test.csv 
+# convert test.json file to test.csv
+# Related: Online conversions: https://tableconvert.com/json-to-excel
 cat test.json | jq -r '(map(keys) | add | unique) as $cols | map(. as $row | $cols | map($row[.])) as $rows | $cols, $rows[] | @csv' > test.csv
 
 ```
