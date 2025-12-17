@@ -722,7 +722,7 @@ apt full-upgrade
 apt --purge autoremove
 
 apt install update-manager-core
-do-release-upgrade -d
+do-release-upgrade
 
 
 ```
