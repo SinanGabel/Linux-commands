@@ -298,6 +298,12 @@ diff -u old.csv new.csv | grep -e "^\+" | sed -e 's/^\+//' | sed -e'' 1d > diff.
 # find difference of two files each with one item per line
 grep -Fxvf file1 file2
 
+# Difference of two folders
+# source: https://stackoverflow.com/questions/4997693/given-two-directory-trees-how-can-i-find-out-which-files-differ-by-content
+diff --brief --recursive dir1/ dir2/
+# or
+diff -qr dir1/ dir2/
+
 # delete first line in text file
 sed -i'' 1d file
 
