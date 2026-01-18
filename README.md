@@ -245,6 +245,9 @@ cat $(ls -p | grep -v /) > files-contents.txt
 # [source](https://stackoverflow.com/questions/29636331/merging-json-files-using-a-bash-script)
 jq -s 'reduce .[] as $item ({}; . * $item)' json_files/* > merged.json
 
+# Compact (minimise) a JSON file 
+jq -c . < file.json
+
 # Check if folder exists, if not then create folder
 [ ! -d /path_to_folder/folder ] && mkdir -p /path_to_folder/folder
 
