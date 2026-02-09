@@ -561,6 +561,8 @@ select 1./10 = 0.1
 
 ## google cloud storage
 
+* [Docs Google on SDK](https://docs.cloud.google.com/sdk/gcloud/reference/storage)
+  
 ```
 # Add/remove versioning to bucket
 gsutil versioning set (on|off) gs://[bucket]
