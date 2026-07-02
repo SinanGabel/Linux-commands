@@ -656,6 +656,9 @@ gcloud auth application-default login
 gcloud auth application-default set-quota-project [project-id]
 gcloud config set project [project-id]
 
+# --- If there are problems in the google cloud (built-in) Terminal one may use this workaround below, and then check with gcloud config list
+gcloud auth login --no-launch-browser
+
 ```
 
 ## some git commands
