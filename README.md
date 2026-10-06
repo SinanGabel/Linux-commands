@@ -19,6 +19,9 @@ echo "some text" >> file.txt
 man comm
 man diff
 
+# clean-up markup files - HTML, XHTML, XML
+tidy -qi file.html > tidyfile.html
+
 # How to add same text to each line of a text file
 # source: https://www.baeldung.com/linux/add-string-line-end
 
