@@ -667,6 +667,12 @@ gcloud auth login --no-launch-browser
 ## some git commands
 
 ```
+# make a new branch called "feature-branch"
+git checkout -b feature-branch   # 1. Create & switch to new branch
+git add --all                    # 2. Stage all changes
+git commit -m "Add new feature"  # 3. Commit changes locally
+git push -u origin feature-branch # 4. Push to GitHub
+
 # roll back Y number of commits
 git reset --soft HEAD~Y
 # then one can e.g. do 
